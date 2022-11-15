@@ -51,7 +51,7 @@ let mouseDown = false
 let showVectorField = true
 
 const render = () => {
-    renderGravitationalField(gravitationalFieldCanvas, gravitationalFieldCanvas.getContext("2d"), objects, mouseDown ? 8 : 2, mouseDown ? 20 : 15, 5, showVectorField)
+    renderGravitationalField(gravitationalFieldCanvas, gravitationalFieldCanvas.getContext("2d"), objects, mouseDown ? 8 : 1, mouseDown ? 3 : 10, mouseDown ? 1 : 3, showVectorField)
     renderObjectManipulation(objectManipulationCanvas, objectManipulationCanvas.getContext("2d"), objects, 20)
 }
 
