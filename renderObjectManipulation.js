@@ -1,5 +1,5 @@
-const renderObjectManipulation = (canvas, ctx, objects, objectRenderRadii) => {
-    ctx.fillStyle = "white"
+const renderObjectManipulation = (modelType, canvas, ctx, objects, objectRenderRadii) => {
+    ctx.fillStyle = "rgb(240, 240, 240)"
     ctx.fillRect(0, 0, canvas.width, canvas.height)
 
     ctx.fillStyle = "rgb(40, 40, 40)"
@@ -10,7 +10,7 @@ const renderObjectManipulation = (canvas, ctx, objects, objectRenderRadii) => {
         ctx.arc(object.x, object.y, objectRenderRadii, 0, 2 * Math.PI)
         ctx.closePath()
         ctx.fill()
-        ctx.strokeText(object.mass.toString(), object.x, object.y + 3)
+        ctx.strokeText(modelType == "gravity" ? object.mass.toString() : object.charge.toString(), object.x, object.y + 3)
     })
 }
 

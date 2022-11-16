@@ -1,13 +1,37 @@
+@font-face {
+    font-family: Roboto;
+    src: url(./Roboto/Roboto-Regular.ttf);
+}
+
 html body {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
     margin: 0;
     padding: 0;
     width: 100vw;
     height: 100vh;
     background-color: rgb(40, 40, 40);
+}
+
+header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    margin: 0;
+    height: 120px;
+}
+
+h1 {
+    margin: 0;
+    font-family: Roboto;
+    font-size: 48px;
+    color: rgb(240, 240, 240);
+}
+
+.graphic {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 120px);
 }
 
 canvas {

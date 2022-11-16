@@ -1,4 +1,4 @@
-import renderGravitationalField from "./renderGravitationalField.js"
+import renderGravitationalField from "./renderField.js"
 import renderObjectManipulation from "./renderObjectManipulation.js"
 
 const gravitationalFieldCanvas = document.getElementById("gravitational-field")
@@ -13,37 +13,32 @@ const objects = [
     {
         x: 0.45 * gravitationalFieldCanvas.width,
         y: 0.5 * gravitationalFieldCanvas.height,
-        mass: 1000
+        mass: 1
     },
     {
         x: 0.2 * gravitationalFieldCanvas.width,
         y: 0.2 * gravitationalFieldCanvas.height,
-        mass: 5000
+        mass: 5
     },
     {
         x: 0.4 * gravitationalFieldCanvas.width,
         y: 0.4 * gravitationalFieldCanvas.height,
-        mass: 500
+        mass: 10
     },
     {
         x: 0.6 * gravitationalFieldCanvas.width,
         y: 0.4 * gravitationalFieldCanvas.height,
-        mass: 100
+        mass: 1
     },
     {
         x: 0.6 * gravitationalFieldCanvas.width,
         y: 0.6 * gravitationalFieldCanvas.height,
-        mass: 1000
+        mass: 5
     },
     {
         x: 0.4 * gravitationalFieldCanvas.width,
         y: 0.6 * gravitationalFieldCanvas.height,
-        mass: 100
-    },
-    {
-        x: 0.85 * gravitationalFieldCanvas.width,
-        y: 0.7 * gravitationalFieldCanvas.height,
-        mass: 2000
+        mass: 10
     }
 ]
 
@@ -51,8 +46,8 @@ let mouseDown = false
 let showVectorField = true
 
 const render = () => {
-    renderGravitationalField(gravitationalFieldCanvas, gravitationalFieldCanvas.getContext("2d"), objects, mouseDown ? 8 : 1, mouseDown ? 3 : 10, mouseDown ? 1 : 3, showVectorField)
-    renderObjectManipulation(objectManipulationCanvas, objectManipulationCanvas.getContext("2d"), objects, 20)
+    renderGravitationalField("gravity", gravitationalFieldCanvas, gravitationalFieldCanvas.getContext("2d"), objects, mouseDown ? 8 : 1, mouseDown ? 3 : 24, mouseDown ? 1 : 8, showVectorField)
+    renderObjectManipulation("gravity", objectManipulationCanvas, objectManipulationCanvas.getContext("2d"), objects, 20)
 }
 
 objectManipulationCanvas.addEventListener("mousedown", () => mouseDown = true)
