@@ -31,7 +31,7 @@ const renderField = (modelType, canvas, ctx, objects, gridStep, flowMarkerStep, 
     for(let i = 0;i<field.length;i++){
         for(let j = 0;j<field[0].length;j++){
             const angle = Math.floor(360 * (Math.atan2(field[i][j].y, field[i][j].x) + Math.PI) / (2 * Math.PI))
-            ctx.fillStyle = `hsl(${angle}, 60%, 50%)`
+            ctx.fillStyle = `hsl(${angle}, 80%, 50%)`
             ctx.fillRect(i * gridStep, j * gridStep, gridStep, gridStep)
         }
     }
